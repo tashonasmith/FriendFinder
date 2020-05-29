@@ -1,11 +1,13 @@
 DONE-Build home and survey HTML pages
 DONE-Set up server connection (server.js)
 
--Create GET route to survey page (htmlroutes.js)
--Create GET route for /:name that routes to home (htmlroutes.js)
+DONE-Create GET route to survey page (htmlroutes.js)
+DONE-Create GET route for /:name that routes to home (htmlroutes.js)
 
--Create GET route for /api/friends.  This will be used to hold JSON for all friends, "API Link" in bottom corner (apiRoutes.js)
--Create POST route for /api/friends.  This will add incoming survey results to JSON object. *incoming data will need to be converted to numbers (apiRoutes.js)
+DONE-Create GET route for /api/friends.  This will be used to hold JSON for all friends, "API Link" in bottom corner (apiRoutes.js)
+DONE-Create POST route for /api/friends.  This will add incoming survey results to JSON object. *incoming data will need to be converted to numbers (apiRoutes.js)
+
+Write js in html pages for interacting with back end
 
 -Create array of objects containing friend data (friends.js)
 
