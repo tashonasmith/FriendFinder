@@ -1,4 +1,4 @@
--Build home and survey HTML pages
+DONE-Build home and survey HTML pages
 -Set up server connection (server.js)
 
 -Create GET route to survey page (htmlroutes.js)
