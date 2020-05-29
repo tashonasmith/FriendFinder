@@ -1,5 +1,5 @@
 DONE-Build home and survey HTML pages
--Set up server connection (server.js)
+DONE-Set up server connection (server.js)
 
 -Create GET route to survey page (htmlroutes.js)
 -Create GET route for /:name that routes to home (htmlroutes.js)
