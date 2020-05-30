@@ -264,12 +264,10 @@
 
         $.post("/api/friends", newUser,)
           .then(function(data) {
-            // console.log("Survey Completed");
-            // alert("Thank you for completing the survey!");
             $("#bff").text(data.name);
             $("bff-photo").attr("src", data.photo);
             $("#bff-modal").modal("toggle");
-            
+
             $("#validationCustom01").val("");
             $("#validationCustom02").val("");
             // $(".form-group").val("0");

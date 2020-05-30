@@ -11,8 +11,11 @@ DONE-Create POST route for /api/friends.  This will add incoming survey results 
 
 DONE-Create array of objects containing friend data (friends.js)
 
--Write js in html pages for interacting with back end
+DONE-Write js in html pages for interacting with back end
 
--Comparison logic
+DONE-Comparison logic
 
--Display modal showing user's most compatible friend
+DONE-Display modal showing user's most compatible friend
+
+-Update README
+-Deploy to Heroku
