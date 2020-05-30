@@ -82,4 +82,6 @@ var friendsArray = [
             4
         ]
     }
-]
+];
+
+module.exports = friendsArray;

@@ -202,7 +202,7 @@
                 </select>
               </div>
             
-              <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>  
+              <button id="submit" type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>  
         </form>
     
     </div>
@@ -215,3 +215,40 @@
     
 </body>
 </html>
+
+<script type="text/javascript">
+
+    $("#submit").on("click", function(event) {
+        event.preventDefault();
+
+        var newUser = {
+            name: $("#validationCustom01").val().trim(),
+            photo: $("#validationCustom02").val().trim(),
+            scores: [
+                $("#FormControlSelect1").val(),
+                $("#FormControlSelect2").val(),
+                $("#FormControlSelect3").val(),
+                $("#FormControlSelect4").val(),
+                $("#FormControlSelect5").val(),
+                $("#FormControlSelect6").val(),
+                $("#FormControlSelect7").val(),
+                $("#FormControlSelect8").val(),
+                $("#FormControlSelect9").val(),
+                $("#FormControlSelect10").val()
+            ]
+        }
+
+        console.log(newUser);
+
+        $.post("/api/friends", newUser,)
+          .then(function(data) {
+            console.log("Survey Completed");
+            alert("Thank you for completing the survey!");
+
+            $("#validationCustom01").val("");
+            $("#validationCustom02").val("");
+            //need to figure out how to reset drop-down options
+
+          });
+    });
+</script>
