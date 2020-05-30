@@ -49,7 +49,7 @@
             <div class="form-group">
                 <label for="exampleFormControlSelect1">Carole Baskin fed Don Lewis to her tigers.</label>
                 <select class="form-control" id="FormControlSelect1">
-                  <option class="dropdown-item disabled">Select an Option</option>  
+                  <option value="0" class="dropdown-item disabled">Select an Option</option>  
                   <option value="1">1 (Strongly Disagree)</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -65,7 +65,7 @@
             <div class="form-group">
                 <label for="FormControlSelect2">Leggings are pants!</label>
                 <select class="form-control" id="FormControlSelect2">
-                  <option class="dropdown-item disabled">Select an Option</option>  
+                  <option value="0" class="dropdown-item disabled">Select an Option</option>  
                   <option value="1">1 (Strongly Disagree)</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -81,7 +81,7 @@
             <div class="form-group">
                 <label for="FormControlSelect3">Brad and Jen should get back together.</label>
                 <select class="form-control" id="FormControlSelect3">
-                  <option class="dropdown-item disabled">Select an Option</option>  
+                  <option value="0" class="dropdown-item disabled">Select an Option</option>  
                   <option value="1">1 (Strongly Disagree)</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -97,7 +97,7 @@
             <div class="form-group">
                 <label for="FormControlSelect4">Millenials are too old to be on Tik Tok.</label>
                 <select class="form-control" id="FormControlSelect4">
-                  <option class="dropdown-item disabled">Select an Option</option>  
+                  <option value="0" class="dropdown-item disabled">Select an Option</option>  
                   <option value="1">1 (Strongly Disagree)</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -113,7 +113,7 @@
             <div class="form-group">
                 <label for="FormControlSelect5">I Like Turtles.</label>
                 <select class="form-control" id="FormControlSelect5">
-                  <option class="dropdown-item disabled">Select an Option</option>  
+                  <option value="0" class="dropdown-item disabled">Select an Option</option>  
                   <option value="1">1 (Strongly Disagree)</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -129,7 +129,7 @@
             <div class="form-group">
                 <label for="FormControlSelect6">I have been personally victimized by Regina George.</label>
                 <select class="form-control" id="FormControlSelect6">
-                  <option class="dropdown-item disabled">Select an Option</option>  
+                  <option value="0" class="dropdown-item disabled">Select an Option</option>  
                   <option value="1">1 (Strongly Disagree)</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -145,7 +145,7 @@
             <div class="form-group">
                 <label for="FormControlSelect7">Rose could have moved over and made room for Jack on that door.</label>
                 <select class="form-control" id="FormControlSelect7">
-                  <option class="dropdown-item disabled">Select an Option</option>  
+                  <option value="0" class="dropdown-item disabled">Select an Option</option>  
                   <option value="1">1 (Strongly Disagree)</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -161,7 +161,7 @@
             <div class="form-group">
                 <label for="FormControlSelect8">NSYNC is better than the Backstreet Boys.</label>
                 <select class="form-control" id="FormControlSelect8">
-                  <option class="dropdown-item disabled">Select an Option</option>  
+                  <option value="0" class="dropdown-item disabled">Select an Option</option>  
                   <option value="1">1 (Strongly Disagree)</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -177,7 +177,7 @@
             <div class="form-group">
                 <label for="FormControlSelect9">Summer is the best season.</label>
                 <select class="form-control" id="FormControlSelect9">
-                  <option class="dropdown-item disabled">Select an Option</option>  
+                  <option value="0" class="dropdown-item disabled">Select an Option</option>  
                   <option value="1">1 (Strongly Disagree)</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -193,7 +193,7 @@
             <div class="form-group">
                 <label for="FormControlSelect10">Sushi is delicious.</label>
                 <select class="form-control" id="FormControlSelect10">
-                  <option class="dropdown-item disabled">Select an Option</option>  
+                  <option value="0" class="dropdown-item disabled">Select an Option</option>  
                   <option value="1">1 (Strongly Disagree)</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -207,6 +207,27 @@
     
     </div>
     <hr>
+
+    <div id="bff-modal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Your Quarantine BFF</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p id="bff"></p>
+              <img id="bff-photo" src="#">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     <footer class="footer">
         <div class="container">
           <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/tashonasmith/FriendFinder" target="_blank">GitHub Repo</a>
@@ -240,14 +261,18 @@
 
         console.log(newUser);
 
+
         $.post("/api/friends", newUser,)
           .then(function(data) {
-            console.log("Survey Completed");
-            alert("Thank you for completing the survey!");
-
+            // console.log("Survey Completed");
+            // alert("Thank you for completing the survey!");
+            $("#bff").text(data.name);
+            $("bff-photo").attr("src", data.photo);
+            $("#bff-modal").modal("toggle");
+            
             $("#validationCustom01").val("");
             $("#validationCustom02").val("");
-            //need to figure out how to reset drop-down options
+            // $(".form-group").val("0");
 
           });
     });
