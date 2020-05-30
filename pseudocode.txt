@@ -7,9 +7,11 @@ DONE-Create GET route for /:name that routes to home (htmlroutes.js)
 DONE-Create GET route for /api/friends.  This will be used to hold JSON for all friends, "API Link" in bottom corner (apiRoutes.js)
 DONE-Create POST route for /api/friends.  This will add incoming survey results to JSON object. *incoming data will need to be converted to numbers (apiRoutes.js)
 
-Write js in html pages for interacting with back end
 
--Create array of objects containing friend data (friends.js)
+
+DONE-Create array of objects containing friend data (friends.js)
+
+-Write js in html pages for interacting with back end
 
 -Comparison logic
 
