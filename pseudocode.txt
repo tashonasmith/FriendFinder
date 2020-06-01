@@ -17,5 +17,5 @@ DONE-Comparison logic
 
 DONE-Display modal showing user's most compatible friend
 
--Update README
+DONE-Update README
 -Deploy to Heroku
